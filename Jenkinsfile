@@ -14,7 +14,7 @@ pipeline {
   
   stage('Build'){
     steps{
-            bat 'mvn clean package'
+            bat 'C:\Users\sree\OneDrive\Documents\apache-maven-3.9.1\bin'
     }
     
   }
