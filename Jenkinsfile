@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('checkout') {
       steps{
-       git https://github.com/venddy/jenkins_file/edit/master/Jenkinsfile
+       git "https://github.com/venddy/jenkins_file/edit/master/Jenkinsfile"
       }
     }
   
