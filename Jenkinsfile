@@ -27,7 +27,8 @@ pipeline {
     stage('Docker Build') {
     	
       steps {
-      	bat 'docker build -t venddy/newmvnimage:latest .'
+      	bat 'docker build -t venddy/venkataimage .'
+ 
       }
     }
   }
