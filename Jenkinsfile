@@ -29,7 +29,10 @@ environment {
     stage('Docker Build') {
     	
       steps {
-       bat 'docker login -u venddy -p Venkata@970569'
+        withCredentials([string(credentialsId: 'venddy', variable: 'dockervariable')]) {
+          bat 'docker login -u venddy -p %dockervariable%
+    
+}
        bat 'docker build -t venddy/mvnimage .'
        bat 'docker push venddy/mvnimage:latest'
 
