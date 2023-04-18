@@ -29,6 +29,7 @@ environment {
     stage('Docker Build') {
     	
       steps {
+       bat 'docker login -u venddy -p Venkata@970569'
        bat 'docker build -t venddy/mvnimage .'
        bat 'docker push venddy/mvnimage:latest'
 
