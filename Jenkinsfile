@@ -30,7 +30,7 @@ environment {
     	
       steps {
        bat 'docker build -t venddy/mvnimage .'
-       bat 'docker push venddy/mvmimage:latest'
+       bat 'docker push venddy/mvnimage:latest'
 
       }
     }
