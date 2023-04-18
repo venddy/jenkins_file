@@ -3,7 +3,9 @@ pipeline {
   tools {
   maven 'maven'
   }
-
+environment {
+  docker = "getVersion()"
+}
   
   stages {
     stage('checkout') {
@@ -27,9 +29,12 @@ pipeline {
     stage('Docker Build') {
     	
       steps {
-      	bat 'docker build -t venddy/venkataimage .'
+        bat 'docker build -t venddy/venkataimage:${docker} .'
  
       }
     }
   }
+}
+def git version(){
+  def commitHASH = bat lable:'', returnStdout: true, script: 'git rev-parse --short HEAD'
 }
