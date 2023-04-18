@@ -30,7 +30,7 @@ environment {
     	
       steps {
         withCredentials([string(credentialsId: 'venddy', variable: 'dockervariable')]) {
-          bat 'docker login -u venddy -p %dockervariable%
+          bat 'docker login -u venddy -p %dockervariable%'
     
 }
        bat 'docker build -t venddy/mvnimage .'
