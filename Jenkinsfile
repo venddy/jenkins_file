@@ -38,6 +38,11 @@ environment {
 
       }
     }
+    stage ("deploy"){
+      steps{ 
+        ansiblePlaybook credentialsId: 'Ansible', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'Inventoryfile', playbook: 'ansible-yml'
+      }
+    } 
   }
 }
 def getVersion(){
