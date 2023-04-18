@@ -20,7 +20,7 @@ environment {
 
     }
     
-  }
+  }'
   stage('test'){
     steps{
         bat 'mvn test'
@@ -29,7 +29,8 @@ environment {
     stage('Docker Build') {
     	
       steps {
-        bat 'docker build . -t venddy/venkataimage:"${docker}" '
+       
+        bat 'docker build  -t venddy/mvnimage:
  
       }
     }
