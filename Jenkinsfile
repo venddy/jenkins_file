@@ -20,7 +20,7 @@ environment {
 
     }
     
-  }'
+  }
   stage('test'){
     steps{
         bat 'mvn test'
