@@ -24,5 +24,11 @@ pipeline {
         bat 'mvn test'
     }
   }
+    stage('Docker Build') {
+    	
+      steps {
+      	sh 'docker build -t venddy/newmvnimage:latest .'
+      }
+    }
   }
 }
