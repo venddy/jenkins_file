@@ -35,6 +35,6 @@ environment {
     }
   }
 }
-def git version(){
+def getVersion(){
   def commitHASH = bat lable:'', returnStdout: true, script: 'git rev-parse --short HEAD'
 }
