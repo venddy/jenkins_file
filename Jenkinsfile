@@ -29,7 +29,7 @@ environment {
     stage('Docker Build') {
     	
       steps {
-        bat 'docker build . -t venddy/venkataimage:${docker} '
+        bat 'docker build . -t venddy/venkataimage:"${docker}" '
  
       }
     }
