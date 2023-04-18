@@ -29,8 +29,7 @@ environment {
     stage('Docker Build') {
     	
       steps {
-       
-        bat 'docker build  -t venddy/mvnimage:
+       bat 'docker build -t venddy/mvnimage:"0.0.1"'
  
       }
     }
