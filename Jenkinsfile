@@ -40,7 +40,7 @@ environment {
     }
     stage ("deploy"){
       steps{ 
-        ansiblePlaybook credentialsId: 'Ansible', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'Inventoryfile', playbook: 'ansible-yml.yml'
+        ansiblePlaybook credentialsId: 'Ansible', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'Inventoryfile', playbook: 'C:\cygwin64\home\sree\ansible-yml.yml'
       }
     } 
   }
