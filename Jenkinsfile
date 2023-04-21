@@ -16,25 +16,25 @@ environment {
   
   stage('Build'){
     steps{
-       sh 'mvn clean package'
+       bat 'mvn clean package'
 
     }
     
   }
   stage('test'){
     steps{
-        sh 'mvn test'
+        bat 'mvn test'
     }
   }
     stage('Docker Build') {
     	
       steps {
         withCredentials([string(credentialsId: 'venddy', variable: 'dockervariable')]) {
-          sh 'docker login -u venddy -p %dockervariable%'
+          bat 'docker login -u venddy -p %dockervariable%'
     
 }
-       sh 'docker build -t venddy/mvnimage .'
-       sh 'docker push venddy/mvnimage:latest'
+       bat 'docker build -t venddy/mvnimage .'
+       bat 'docker push venddy/mvnimage:latest'
 
       }
     }
@@ -46,5 +46,5 @@ environment {
   }
 }
 def getVersion(){
-  def commitHASH = sh lable:'', returnStdout: true, script: 'git rev-parse --short HEAD'
+  def commitHASH = bat lable:'', returnStdout: true, script: 'git rev-parse --short HEAD'
 }
